@@ -88,8 +88,8 @@ class Discriminator(nn.Module):
 def mnist_data():
     compose = transforms.Compose(
         [transforms.ToTensor(),
-         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-         ])
+            transforms.Normalize((0.5,), (0.5,))
+            ])
     output_dir = './data/mnist'
     return datasets.MNIST(root=output_dir, train=True,
                           transform=compose, download=True)
